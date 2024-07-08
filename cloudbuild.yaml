@@ -3,3 +3,5 @@ steps:
   args: ['build', '-t', 'gcr.io/kubernetesassignment-428818/container-2', '.']
 images:
 - 'gcr.io/kubernetesassignment-428818/container-2'
+options:
+  logging: NONE
