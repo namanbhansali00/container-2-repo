@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: container-2-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: container-2
+  template:
+    metadata:
+      labels:
+        app: container-2
+    spec:
+      containers:
+      - name: container-2
+        image: us-central1-docker.pkg.dev/kubernetesassignment-428915/kubernetes-assignment-repo/container2
+        ports:
+        - containerPort: 8081
+        volumeMounts:
+        - mountPath: /Naman_PV_dir
+          name: naman-pv
+      volumes:
+      - name: naman-pv
+        persistentVolumeClaim:
+          claimName: naman-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: container-2-service
+spec:
+  ports:
+  - port: 8080
+    targetPort: 8081
+  selector:
+    app: container-2
