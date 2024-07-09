@@ -3,7 +3,7 @@ import os
 
 app = Flask(__name__)
 
-PERSISTENT_VOLUME_PATH = "/Naman_PV_dir"
+PERSISTENT_VOLUME_PATH = "/Naman_PV_diaar"
 
 @app.route('/calculate', methods=['POST'])
 def calculate():
