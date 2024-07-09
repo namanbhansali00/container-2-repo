@@ -5,3 +5,5 @@ steps:
   args: ['push', 'us-central1-docker.pkg.dev/kubernetesassignment-428915/kubernetes-assignment-repo/container2:latest']
 images:
 - 'us-central1-docker.pkg.dev/kubernetesassignment-428915/kubernetes-assignment-repo/container2:latest'
+options:
+  logging: NONE
